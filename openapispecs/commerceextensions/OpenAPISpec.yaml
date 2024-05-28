@@ -111,6 +111,20 @@ tags:
       ```
       Even if no validation is set, field_type `string` only supports values that are up to `65535` characters long.
 
+      ## Null values
+      
+      For all Custom Field types you can configure whether or not a value can be set to `null` by using the `allow_null_values` attribute, the default for this is `true`.
+      
+       ```
+      "validation": {
+        "boolean": {
+            "allow_null_values": false
+        }
+      }
+      ```
+      
+      When set to `false` any attempts to create or update a Custom API Entry with `null` for that Custom Field will be rejected.
+
       ## Reserved Slugs
 
       The following values cannot be used as a `slug` in a Custom Field.

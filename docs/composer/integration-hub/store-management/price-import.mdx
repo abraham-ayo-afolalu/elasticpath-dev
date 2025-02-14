@@ -49,7 +49,7 @@ Each tier can only have one currency within the same block.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| `tiers: <key>` | `object` | The name of the tier, such as `Pencils`. |
+| `tiers: <key>` | `object` | The name of the tier, such as `Pencils`. Please ensure that camelCase or snake_case is used |
 | `tiers: <key>: minimum_quantity` | `integer` | The minimum quantity defined for the specified price. |
 | `tiers: <key>: amount` | `integer` | The price for each quantity. |
 
@@ -59,7 +59,7 @@ Each sale can only have one sale within the same block.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| `sales: <key>` | `object` | The name of the sale, such as `Summer Sale`. |
+| `sales: <key>` | `object` | The name of the sale, such as `summerSale`. Please ensure that camelCase or snake_case is used |
 | `sales: <key>: schedule` | `object` | The schedule of the sale. Contains an optional `valid_from` and `valid_to` parameter for the start and end date of the sale. |
 
 ## Example Price Object

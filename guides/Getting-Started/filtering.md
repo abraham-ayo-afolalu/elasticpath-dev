@@ -260,6 +260,36 @@ An incorrectly formatted filter or an unsupported operator returns a `400` respo
 }
 ```
 
+:::note
+When a query with a filter returns no matching results, the API will respond with the following: HTTP Status Code: 200 OK
+This indicates that the request was successful, even if no records match the filter criteria.
+	- Response Body:
+```json
+{
+  "meta": {
+    "page": {
+      "limit": 25,
+      "offset": 0,
+      "current": 1,
+      "total": 0
+    },
+    "results": {
+      "total": 0
+    }
+  },
+  "data": [],
+  "links": {
+    "current": "{base_url}/example/?filter=eq(name,Elastic)&page[offset]=0&page[limit]=25",
+    "first": "{base_url}/example/?filter=eq(name,Elastic)&page[offset]=0&page[limit]=25",
+    "last": "{base_url}/example/?filter=eq(name,Elastic)&page[offset]=0&page[limit]=25",
+    "next": "null",
+    "prev": "null"
+  }
+}
+```
+The empty data array signifies that no records were found.
+:::
+
 ### Performance
 
 Filtered queries may be less performant than non-filtered queries, especially at scale (either with high
